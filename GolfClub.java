@@ -75,7 +75,7 @@ import static java.util.stream.Collectors.toMap;
                 System.out.println("Invalid Value please enter a number!!!...");
                 sc.next();
             }
-            while (!scoreEntered.golferName)){
+            while (!scoreEntered.containsKey(golferName)){
                 System.out.println("Entered name can not be found in scoreboard");
                 golferName=sc.next();
             }
@@ -93,7 +93,7 @@ import static java.util.stream.Collectors.toMap;
             for (int i = 0; i < option; i++) {
                 System.out.println("Enter a new name: ");
                 String name = sc.next();
-                if (scoreEntered.name) {
+                if (scoreEntered.containsKey(name)) {
                     System.out.println("The entered name is already exist. Do you want to keep existing data?.'yes' or 'no' : ");
                     String data = sc.next();
                     switch (data) {
@@ -112,7 +112,7 @@ import static java.util.stream.Collectors.toMap;
                             break;
                     }
                 }
-                if(!scoreEntered.name){
+                if(!scoreEntered.containsKey(name)){
                     System.out.println("Enter a new result :");
                     while (!sc.hasNextInt()) {
                         System.out.println("Invalid result, please enter a number!!!...");
@@ -154,7 +154,7 @@ import static java.util.stream.Collectors.toMap;
                     for (int i = 1; i <= deleteC; i++) {
                         System.out.println("Enter the name of the player that you want do delete: ");
                         String deleteName = sc.next();
-                        while (!scoreEntered.deleteName) {
+                        while (!scoreEntered.containsKey(deleteName)) {
                             System.out.println("Entered name can not be found in scoreboard");
                             deleteName = sc.next();
                         }
