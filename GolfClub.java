@@ -14,6 +14,7 @@ import static java.util.stream.Collectors.toMap;
             recover = new HashMap<>();
 
             int option;
+            do {
 
                 System.out.println("Welcome to Springfield Golf Club.");
                 System.out.println("1) Enter the score");
@@ -24,14 +25,14 @@ import static java.util.stream.Collectors.toMap;
                 System.out.println("6) Exit Program");
                 System.out.println(">");
 
-                while(!sc.hasNextInt()){
+                while (!sc.hasNextInt()) {
 
                     System.out.println("Invalid Value please enter a number!!!...");
 
                     sc.next();
                 }
                 option = sc.nextInt();
-                switch(option){
+                switch (option) {
                     case 1:
                         enterScore();
                         break;
@@ -53,7 +54,8 @@ import static java.util.stream.Collectors.toMap;
                     default:
                         System.out.println("Invalid option!!! Please enter a number between 1 and 4");
                 }
-            }
+            }while(option >1 || option < 4 );
+
 
 
         private static  void displayScoreBoard(){
